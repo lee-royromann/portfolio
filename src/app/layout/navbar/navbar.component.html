@@ -1,1 +1,48 @@
-<p>navbar works!</p>
+<nav class="navbar">
+    <img class="navbar__logo" src="assets/logos/lee-roy.png" alt="Logo"/>
+
+    <a class="navbar__link navbar__link--about" href="#about">
+        About me
+        <img class="navbar__link-line" src="assets/img/0_drawn_lines/0_header/line_1.png" alt="About me" />
+    </a>
+    <a class="navbar__link navbar__link--skills" href="#skills">
+        Skills
+        <img class="navbar__link-line" src="assets/img/0_drawn_lines/0_header/line_2.png" alt="Skills" />
+    </a>
+    <a class="navbar__link navbar__link--projects" href="#projects">
+        Projects
+        <img class="navbar__link-line" src="assets/img/0_drawn_lines/0_header/line_4.png" alt="Projects" />
+    </a>
+    <a class="navbar__link navbar__link--contact" href="#contact">
+        Contact
+        <img class="navbar__link-line" src="assets/img/0_drawn_lines/0_header/line_3.png" alt="Contact" />
+    </a>
+
+    <div class="navbar__lang-switch">
+        <span
+            class="navbar__lang navbar__lang--left"
+            [class.navbar__lang--active]="activeLang === 'en'"
+            (click)="setLang('en')">
+            EN
+            <img
+                *ngIf="activeLang !== 'en'"
+                class="navbar__lang-rect navbar__lang-rect--left"
+                src="assets/img/0_drawn_lines/0_header/rectangle.png"
+                alt="" />
+        </span>
+        <div class="navbar__lang-toggle" (click)="toggleLang()">
+            <div class="navbar__lang-knob" [class.navbar__lang-knob--right]="activeLang === 'de'"></div>
+        </div>
+        <span
+            class="navbar__lang navbar__lang--right"
+            [class.navbar__lang--active]="activeLang === 'de'"
+            (click)="setLang('de')">
+            DE
+            <img
+                *ngIf="activeLang !== 'de'"
+                class="navbar__lang-rect navbar__lang-rect--right"
+                src="assets/img/0_drawn_lines/0_header/rectangle.png"
+                alt="" />
+        </span>
+    </div>
+</nav>
